@@ -34,6 +34,7 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 				padding-left: 0.5rem;
 			}
 			.info-container {
+				flex: 1;
 				display: flex;
 				flex-direction: column;
 			}

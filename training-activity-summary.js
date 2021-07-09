@@ -1,7 +1,9 @@
 import './components/activity-event-assignment-graded.js';
+import './components/activity-event-assignment-overdue.js';
 import { css, html, LitElement } from 'lit-element/lit-element.js';
 import { ActivitySummaryEntity } from './src/ActivitySummaryEntity.js';
 import { AssignmentGradedEntity } from './src/AssignmentGradedEntity.js';
+import { AssignmentOverdueEntity } from './src/AssignmentOverdueEntity.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeTrainingActivitySummaryMixin } from './mixins/training-activity-summary-lang-mixin.js';
 
@@ -16,7 +18,7 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 	static get styles() {
 		return css`
 			:host {
-				display: inline-block;
+				display: block;
 			}
 			:host([hidden]) {
 				display: none;
@@ -31,7 +33,9 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 	}
 
 	render() {
-		return html`${this._renderEvents()}`;
+		return html`
+			<div>${this._renderEvents()}</div>
+		`;
 	}
 
 	set _entity(entity) {
@@ -62,6 +66,14 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 					.token=${this.token}
 				>
 				</d2l-labs-activity-event-assignment-graded>
+			`;
+		} else if (eventEntity.class.includes(AssignmentOverdueEntity.class)) {
+			return html`
+				<d2l-labs-activity-event-assignment-overdue
+					.href=${itemLinkHref}
+					.token=${this.token}
+				>
+				</d2l-labs-activity-event-assignment-overdue>
 			`;
 		} else {
 			return html``;

@@ -16,6 +16,6 @@ export class ActivitySummaryEntity extends Entity {
 		const timestamp1 = event1 && event1.properties && event1.properties.timestamp;
 		const timestamp2 = event2 && event2.properties && event2.properties.timestamp;
 
-		return timestamp1 > timestamp2;
+		return timestamp1 < timestamp2;
 	}
 }
