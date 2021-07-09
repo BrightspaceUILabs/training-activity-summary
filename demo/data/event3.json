@@ -1,0 +1,17 @@
+{
+  "class": [
+    "activity-event",
+    "discussion-post"
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "data/event3.json"
+    }
+  ],
+  "properties": {
+    "courseTitle": "English",
+    "discussionTitle": "Of Mice and Men Chapter 3",
+    "timestamp": 1625583024127
+  }
+}

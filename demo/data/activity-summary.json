@@ -1,0 +1,87 @@
+{
+  "class": ["activity-summary"],
+  "properties": {},
+  "links": [
+    {
+      "rel": ["self"],
+      "href": "data/activity-summary.json"
+    }
+  ],
+  "entities": [
+    {
+      "class": [
+        "activity-event",
+        "assignment-graded"
+      ],
+      "links": [
+        {
+          "rel": ["item"],
+          "href": "data/event1.json"
+        }
+      ],
+      "properties": {
+        "timestamp": 1625669424127
+      }
+    },
+    {
+      "class": [
+        "activity-event",
+        "assignment-overdue"
+      ],
+      "links": [
+        {
+          "rel": ["item"],
+          "href": "data/event2.json"
+        }
+      ],
+      "properties": {
+        "timestamp": 1625496624127
+      }
+    },
+    {
+      "class": [
+        "activity-event",
+        "discussion-post"
+      ],
+      "links": [
+        {
+          "rel": ["item"],
+          "href": "data/event3.json"
+        }
+      ],
+      "properties": {
+        "timestamp": 1625583024127
+      }
+    },
+    {
+      "class": [
+        "activity-event",
+        "discussion-replies"
+      ],
+      "links": [
+        {
+          "rel": ["item"],
+          "href": "data/event4.json"
+        }
+      ],
+      "properties": {
+        "timestamp": 1625669784127
+      }
+    },
+    {
+      "class": [
+        "activity-event",
+        "quiz-posted"
+      ],
+      "links": [
+        {
+          "rel": "self",
+          "href": "data/event5.json"
+        }
+      ],
+      "properties": {
+        "timestamp": 1625755824127
+      }
+    }
+  ]
+}

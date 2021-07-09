@@ -1,0 +1,18 @@
+{
+  "class": [
+    "activity-event",
+    "assignment-overdue"
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "data/event2.json"
+    }
+  ],
+  "properties": {
+    "assignmentTitle": "Assignment 2",
+    "courseTitle": "Biology",
+    "timestamp": 1625496624127,
+    "endDate": 1626533424127
+  }
+}

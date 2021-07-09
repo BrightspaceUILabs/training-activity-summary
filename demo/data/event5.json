@@ -1,0 +1,18 @@
+{
+  "class": [
+    "activity-event",
+    "quiz-posted"
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "data/event5.json"
+    }
+  ],
+  "properties": {
+    "courseTitle": "Chemistry",
+    "quizTitle": "Balancing Chemical Reactions",
+    "timestamp": 1625755824127,
+    "dueDate": 1626274224127
+  }
+}
