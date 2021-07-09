@@ -5,9 +5,15 @@ jobs:
     name: Test
     timeout-minutes: 5
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
       - uses: Brightspace/third-party-actions@actions/checkout
-      - uses: Brightspace/third-party-actions@actions/setup-node
+      - name: Use Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.node-version}}
       - name: Install dependencies
         run: npm install
       - name: Lint (JavaScript)
