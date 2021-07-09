@@ -53,13 +53,12 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 			return html``;
 		}
 
-		debugger; //eslint-disable-line
-		const selfLinkHref = eventEntity.getLinkByRel('self').href;
+		const itemLinkHref = eventEntity.getLinkByRel('item').href;
 
 		if (eventEntity.class.includes(AssignmentGradedEntity.class)) {
 			return html`
 				<d2l-labs-activity-event-assignment-graded
-					.href=${selfLinkHref}
+					.href=${itemLinkHref}
 					.token=${this.token}
 				>
 				</d2l-labs-activity-event-assignment-graded>
@@ -75,7 +74,7 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 		}
 
 		return this._sortedActivityEvents.reduce(
-			(eventsHtml, eventEntity) => eventsHtml + this._renderEventElement(eventEntity),
+			(eventsHtml, eventEntity) => html`${eventsHtml}${this._renderEventElement(eventEntity)}`,
 			html``
 		);
 	}

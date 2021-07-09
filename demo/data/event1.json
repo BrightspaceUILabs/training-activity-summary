@@ -5,7 +5,7 @@
   ],
   "links": [
     {
-      "rel": "self",
+      "rel": ["self"],
       "href": "data/event1.json"
     }
   ],

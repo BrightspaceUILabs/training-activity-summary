@@ -9,6 +9,9 @@
   ],
   "entities": [
     {
+      "rel": [
+        "item"
+      ],
       "class": [
         "activity-event",
         "assignment-graded"
@@ -24,6 +27,9 @@
       }
     },
     {
+      "rel": [
+        "item"
+      ],
       "class": [
         "activity-event",
         "assignment-overdue"
@@ -39,6 +45,9 @@
       }
     },
     {
+      "rel": [
+        "item"
+      ],
       "class": [
         "activity-event",
         "discussion-post"
@@ -54,6 +63,9 @@
       }
     },
     {
+      "rel": [
+        "item"
+      ],
       "class": [
         "activity-event",
         "discussion-replies"
@@ -69,13 +81,16 @@
       }
     },
     {
+      "rel": [
+        "item"
+      ],
       "class": [
         "activity-event",
         "quiz-posted"
       ],
       "links": [
         {
-          "rel": "self",
+          "rel": ["item"],
           "href": "data/event5.json"
         }
       ],
