@@ -17,32 +17,32 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 	static get styles() {
 		return css`
 			:host {
-				margin: 1rem;
-				padding: 1rem;
 				border: 2px solid var(--d2l-color-tungsten);
 				border-radius: 6px;
 				display: flex;
+				margin: 1rem;
+				padding: 1rem;
 			}
 			:host([hidden]) {
 				display: none;
 			}
-			.icon-slot {
+			#icon-slot {
 				padding-right: 0.5rem;
 			}
-			:host([dir=rtl]) .icon-slot {
-				padding-right: 0;
+			:host([dir=rtl]) #icon-slot {
 				padding-left: 0.5rem;
+				padding-right: 0;
 			}
-			.info-container {
-				flex: 1;
+			#info-container {
 				display: flex;
+				flex: 1;
 				flex-direction: column;
 			}
-			.info-header {
-				display: flex;
-				justify-content: space-between;
-				font-size: 0.8rem;
+			#info-header {
 				color: var(--d2l-color-galena);
+				display: flex;
+				font-size: 0.8rem;
+				justify-content: space-between;
 			}
 		`;
 	}
@@ -56,13 +56,13 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 
 	render() {
 		return html`
-			<div class="icon-slot">
+			<div id="icon-slot">
 				<slot name="icon"></slot>
 			</div>
-			<div class="info-container">
-				<div class="info-header">
+			<div id="info-container">
+				<div id="info-header">
 					<div>${this._courseTitle}</div>
-					<div class="date-time">${this._eventDateTime}</div>
+					<div>${this._eventDateTime}</div>
 				</div>
 				<slot name="description"></slot>
 				<slot name="details"></slot>

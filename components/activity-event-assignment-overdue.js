@@ -23,13 +23,13 @@ class ActivityEventAssignmentOverdue extends LocalizeTrainingActivitySummaryMixi
 			:host([hidden]) {
 				display: none;
 			}
-			.end-date-detail{
-				padding: 2px;
-				display: inline-block;
+			#end-date-detail {
 				border: 2px solid var(--d2l-color-primary-accent-indicator);
 				border-radius: 10px;
 				color: var(--d2l-color-primary-accent-indicator);
+				display: inline-block;
 				font-size: 0.8rem;
+				padding: 2px;
 			}
 			.description: {
 				font-size: 2rem;
@@ -53,7 +53,7 @@ class ActivityEventAssignmentOverdue extends LocalizeTrainingActivitySummaryMixi
 				<div slot="icon"><d2l-icon icon="tier3:alert"></d2l-icon></div>
 				<div slot="description">${this.localize('assignment:overdue:description', 'assignmentTitle', this._assignmentTitle)}</div>
 				<div slot="details">
-					<div class="end-date-detail">${this.localize('assignment:overdue:endDate', 'endDate', this._endDate)}</div>
+					<div id="end-date-detail">${this.localize('assignment:overdue:endDate', 'endDate', this._endDate)}</div>
 				</div>
 			</d2l-labs-activity-event-common>
 		`;

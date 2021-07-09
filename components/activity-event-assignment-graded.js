@@ -23,13 +23,13 @@ class ActivityEventAssignmentGraded extends LocalizeTrainingActivitySummaryMixin
 			:host([hidden]) {
 				display: none;
 			}
-			.grade-detail{
-				padding: 2px;
-				display: inline-block;
+			#grade-detail {
 				border: 2px solid var(--d2l-color-primary-accent-indicator);
 				border-radius: 10px;
 				color: var(--d2l-color-primary-accent-indicator);
+				display: inline-block;
 				font-size: 0.8rem;
+				padding: 2px;
 			}
 			.description: {
 				font-size: 2rem;
@@ -53,7 +53,7 @@ class ActivityEventAssignmentGraded extends LocalizeTrainingActivitySummaryMixin
 				<div slot="icon"><d2l-icon icon="tier3:grade"></d2l-icon></div>
 				<div slot="description">${this.localize('assignment:graded:description', 'assignmentTitle', this._assignmentTitle)}</div>
 				<div slot="details">
-					<div class="grade-detail">${this.localize('assignment:graded:grade', 'grade', this._grade)}</div>
+					<div id="grade-detail">${this.localize('assignment:graded:grade', 'grade', this._grade)}</div>
 				</div>
 			</d2l-labs-activity-event-common>
 		`;
