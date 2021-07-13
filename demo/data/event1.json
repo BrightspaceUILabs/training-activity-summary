@@ -1,0 +1,18 @@
+{
+  "class": [
+    "activity-event",
+    "assignment-graded"
+  ],
+  "links": [
+    {
+      "rel": ["self"],
+      "href": "data/event1.json"
+    }
+  ],
+  "properties": {
+    "assignmentTitle": "Assignment 3",
+    "courseTitle": "Social Studies",
+    "grade": "7/10",
+    "timestamp": 1625669424127
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "class": ["activity-summary"],
+  "properties": {},
+  "links": [
+    {
+      "rel": ["self"],
+      "href": "data/empty-activity-summary.json"
+    }
+  ],
+  "entities": []
+}

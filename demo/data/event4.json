@@ -1,0 +1,18 @@
+{
+  "class": [
+    "activity-event",
+    "discussion-replies"
+  ],
+  "links": [
+    {
+      "rel": ["self"],
+      "href": "data/event4.json"
+    }
+  ],
+  "properties": {
+    "courseTitle": "English",
+    "discussionTitle": "Discussion on Of Mice and Men Chapter 3",
+    "numberOfReplies": 4,
+    "timestamp": 1625669784127
+  }
+}
