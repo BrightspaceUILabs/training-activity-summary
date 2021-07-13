@@ -9,8 +9,8 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 
 	static get properties() {
 		return {
-			_courseTitle: { type: String },
-			_eventDateTime: { type: String }
+			courseTitle: { type: String },
+			eventDateTime: { type: String }
 		};
 	}
 
@@ -50,8 +50,8 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 	constructor() {
 		super();
 		this._setEntityType(ActivityEventEntity);
-		this._courseTitle = '';
-		this._eventDateTime = '';
+		this.courseTitle = '';
+		this.eventDateTime = '';
 	}
 
 	render() {
@@ -61,8 +61,8 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 			</div>
 			<div id="info-container">
 				<div id="info-header">
-					<div>${this._courseTitle}</div>
-					<div>${this._eventDateTime}</div>
+					<div>${this.courseTitle}</div>
+					<div>${this.eventDateTime}</div>
 				</div>
 				<slot name="description"></slot>
 				<slot name="details"></slot>
@@ -80,9 +80,9 @@ class ActivityEventCommon extends LocalizeTrainingActivitySummaryMixin(EntityMix
 
 	_onActivityEventChanged(activityEvent) {
 		if (activityEvent) {
-			this._courseTitle = activityEvent.courseTitle();
-			this._eventDateTime = formatDateTimeFromTimestamp(activityEvent.timestamp(), { format: 'medium' });
+			this.courseTitle = activityEvent.courseTitle();
+			this.eventDateTime = formatDateTimeFromTimestamp(activityEvent.timestamp(), { format: 'medium' });
 		}
 	}
 }
-customElements.define('d2l-labs-activity-event-common', ActivityEventCommon);
+customElements.define('activity-event-common', ActivityEventCommon);

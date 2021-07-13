@@ -11,7 +11,7 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 
 	static get properties() {
 		return {
-			_sortedActivityEvents: { type: Array },
+			sortedActivityEvents: { type: Array },
 		};
 	}
 
@@ -29,7 +29,7 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 	constructor() {
 		super();
 		this._setEntityType(ActivitySummaryEntity);
-		this._sortedActivityEvents = [];
+		this.sortedActivityEvents = [];
 	}
 
 	render() {
@@ -48,7 +48,7 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 
 	_onActivitySummaryChange(activitySummary) {
 		if (activitySummary) {
-			this._sortedActivityEvents = activitySummary.getSortedActivityEvents();
+			this.sortedActivityEvents = activitySummary.getSortedActivityEvents();
 		}
 	}
 
@@ -61,19 +61,19 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 
 		if (eventEntity.class.includes(AssignmentGradedEntity.class)) {
 			return html`
-				<d2l-labs-activity-event-assignment-graded
+				<activity-event-assignment-graded
 					.href=${itemLinkHref}
 					.token=${this.token}
 				>
-				</d2l-labs-activity-event-assignment-graded>
+				</activity-event-assignment-graded>
 			`;
 		} else if (eventEntity.class.includes(AssignmentOverdueEntity.class)) {
 			return html`
-				<d2l-labs-activity-event-assignment-overdue
+				<activity-event-assignment-overdue
 					.href=${itemLinkHref}
 					.token=${this.token}
 				>
-				</d2l-labs-activity-event-assignment-overdue>
+				</activity-event-assignment-overdue>
 			`;
 		} else {
 			return html``;
@@ -81,14 +81,14 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 	}
 
 	_renderEvents() {
-		if (!this._sortedActivityEvents || this._sortedActivityEvents.length === 0) {
+		if (!this.sortedActivityEvents || this.sortedActivityEvents.length === 0) {
 			return html`${this.localize('summary:empty:message')}`;
 		}
 
-		return this._sortedActivityEvents.reduce(
+		return this.sortedActivityEvents.reduce(
 			(eventsHtml, eventEntity) => html`${eventsHtml}${this._renderEventElement(eventEntity)}`,
 			html``
 		);
 	}
 }
-customElements.define('d2l-labs-training-activity-summary', TrainingActivitySummary);
+customElements.define('training-activity-summary', TrainingActivitySummary);

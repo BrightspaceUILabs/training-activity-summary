@@ -10,8 +10,8 @@ class ActivityEventAssignmentOverdue extends LocalizeTrainingActivitySummaryMixi
 
 	static get properties() {
 		return {
-			_assignmentTitle: { type: String },
-			_endDate: { type: String }
+			assignmentTitle: { type: String },
+			endDate: { type: String }
 		};
 	}
 
@@ -40,22 +40,22 @@ class ActivityEventAssignmentOverdue extends LocalizeTrainingActivitySummaryMixi
 	constructor() {
 		super();
 		this._setEntityType(AssignmentOverdueEntity);
-		this._assignmentTitle = '';
-		this._endDate = '';
+		this.assignmentTitle = '';
+		this.endDate = '';
 	}
 
 	render() {
 		return html`
-			<d2l-labs-activity-event-common
+			<activity-event-common
 				.href=${this.href}
 				.token=${this.token}
 			>
 				<div slot="icon"><d2l-icon icon="tier3:alert"></d2l-icon></div>
-				<div slot="description">${this.localize('assignment:overdue:description', 'assignmentTitle', this._assignmentTitle)}</div>
+				<div slot="description">${this.localize('assignment:overdue:description', 'assignmentTitle', this.assignmentTitle)}</div>
 				<div slot="details">
-					<div id="end-date-detail">${this.localize('assignment:overdue:endDate', 'endDate', this._endDate)}</div>
+					<div id="end-date-detail">${this.localize('assignment:overdue:endDate', 'endDate', this.endDate)}</div>
 				</div>
-			</d2l-labs-activity-event-common>
+			</activity-event-common>
 		`;
 	}
 
@@ -69,9 +69,9 @@ class ActivityEventAssignmentOverdue extends LocalizeTrainingActivitySummaryMixi
 
 	_onAssignmentOverdueChanged(assignmentOverdue) {
 		if (assignmentOverdue) {
-			this._assignmentTitle = assignmentOverdue.assignmentTitle();
-			this._endDate = assignmentOverdue.endDate();
+			this.assignmentTitle = assignmentOverdue.assignmentTitle();
+			this.endDate = assignmentOverdue.endDate();
 		}
 	}
 }
-customElements.define('d2l-labs-activity-event-assignment-overdue', ActivityEventAssignmentOverdue);
+customElements.define('activity-event-assignment-overdue', ActivityEventAssignmentOverdue);

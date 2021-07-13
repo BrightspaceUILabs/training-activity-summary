@@ -32,7 +32,7 @@ npm install @brightspace-ui-labs/training-activity-summary
 <script type="module">
     import '@brightspace-ui-labs/training-activity-summary/training-activity-summary.js';
 </script>
-<d2l-labs-training-activity-summary>My element</d2l-labs-training-activity-summary>
+<training-activity-summary>My element</training-activity-summary>
 ```
 
 **Properties:**
@@ -43,7 +43,7 @@ npm install @brightspace-ui-labs/training-activity-summary
 
 **Accessibility:**
 
-To make your usage of `d2l-labs-training-activity-summary` accessible, use the following properties when applicable:
+To make your usage of `training-activity-summary` accessible, use the following properties when applicable:
 
 | Attribute | Description |
 |--|--|

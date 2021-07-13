@@ -4,16 +4,17 @@ jobs:
   test:
     name: Test
     timeout-minutes: 5
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, AWS]
     strategy:
       matrix:
         node-version: [12.x]
     steps:
+      - name: Checkout
       - uses: Brightspace/third-party-actions@actions/checkout
-      - name: Use Node.js ${{matrix.node-version}}
-        uses: actions/setup-node@v2
+      - name: Setup Node
+        uses: Brightspace/third-party-actions@actions/setup-node
         with:
-          node-version: ${{matrix.node-version}}
+          node-version: '14.x'
       - name: Install dependencies
         run: npm install
       - name: Lint (JavaScript)

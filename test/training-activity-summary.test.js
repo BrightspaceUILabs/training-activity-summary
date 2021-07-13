@@ -6,14 +6,14 @@ describe('TrainingActivitySummary', () => {
 
 	describe('accessibility', () => {
 		it('should pass all aXe tests', async() => {
-			const el = await fixture(html`<d2l-labs-training-activity-summary></d2l-labs-training-activity-summary>`);
+			const el = await fixture(html`<training-activity-summary></training-activity-summary>`);
 			await expect(el).to.be.accessible();
 		});
 	});
 
 	describe('constructor', () => {
 		it('should construct', () => {
-			runConstructor('d2l-labs-training-activity-summary');
+			runConstructor('training-activity-summary');
 		});
 	});
 
