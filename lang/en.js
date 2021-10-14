@@ -7,5 +7,6 @@ export default {
 	"assignment:overdue:description": "{assignmentTitle} is now overdue.",
 	"assignment:overdue:endDate": "End Date: {endDate}",
 	"quiz:posted:description": "A new quiz has been posted: {quizTitle}",
+	"quiz:posted:duedate": "Due Date: {dueDate}",
 	"summary:empty:message": "No recent activity at this time"
 };

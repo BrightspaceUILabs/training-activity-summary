@@ -1,11 +1,13 @@
 import './components/activity-event-assignment-graded.js';
 import './components/activity-event-assignment-overdue.js';
+import './components/activity-event-quiz-posted.js';
 import { css, html, LitElement } from 'lit-element/lit-element.js';
 import { ActivitySummaryEntity } from './src/ActivitySummaryEntity.js';
 import { AssignmentGradedEntity } from './src/AssignmentGradedEntity.js';
 import { AssignmentOverdueEntity } from './src/AssignmentOverdueEntity.js';
 import { EntityMixinLit } from 'siren-sdk/src/mixin/entity-mixin-lit';
 import { LocalizeTrainingActivitySummaryMixin } from './mixins/training-activity-summary-lang-mixin.js';
+import { QuizPostedEntity } from './src/QuizPostedEntity.js';
 
 class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(EntityMixinLit(LitElement)) {
 
@@ -74,6 +76,14 @@ class TrainingActivitySummary extends LocalizeTrainingActivitySummaryMixin(Entit
 					.token=${this.token}
 				>
 				</activity-event-assignment-overdue>
+			`;
+		} else if (eventEntity.class.includes(QuizPostedEntity.class)) {
+			return html`
+				<activity-event-quiz-posted
+					.href=${itemLinkHref}
+					.token=${this.token}
+				>
+				</activity-event-quiz-posted>
 			`;
 		} else {
 			return html``;
